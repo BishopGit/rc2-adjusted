@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>[1.0] RimCuisine 2: Bottling and Booze Expansion</li>
+        </mods>
+
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+
+            <operations>
+                <!-- Make distilling Medieval era tech -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ResearchProjectDef[defName="RC2_AdvancedBrewing"]/techLevel</xpath>
+                    <value>
+                        <techLevel>Medieval</techLevel>
+                    </value>
+                </li>
+
+                <!-- Move energy drink recipe to cooking stoves -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessEnergyDrink"]/recipeUsers</xpath>
+                    <value>
+                        <recipeUsers>
+                            <li>ElectricStove</li>
+                            <li>FueledStove</li>
+                        </recipeUsers>
+                    </value>
+                </li>
+
+            </operations>
+        </match>
+
+    </Operation>
+</Patch>

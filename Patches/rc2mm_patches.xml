@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>[1.0] RimCuisine 2 Meals and Munchies Expansion</li>
+        </mods>
+
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+
+            <operations>
+
+                <!-- Change research requirements to better suit medieval play -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_Crisps"]/researchPrerequisite</xpath>
+                    <value>
+                        <researchPrerequisite>RC2_AdvancedCooking</researchPrerequisite>
+                    </value>
+                </li>
+
+                <!-- Make rubaboo last longer -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_Rubaboo"]/comps/li[1]/daysToRotStart</xpath>
+                    <value>
+                        <daysToRotStart>21</daysToRotStart>
+                    </value>
+                </li>
+
+                <!-- Allow fruit preserve recipes -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeFruitPreserves"]/researchPrerequisite</xpath>
+                    <value>
+                        <researchPrerequisite>RC2_IntermediateCooking</researchPrerequisite>
+                    </value>
+                </li>
+
+                <!-- Change 'unfortunate' descriptions -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="RC2_Pizza"]/description</xpath>
+                    <value>
+                        <description>Pizza! A galactic favorite for thousands of years, this delicious foodstuff is a mixture of bread, vegetable-based sauce, and cheese, topped with meat.</description>
+                    </value>
+                </li>
+
+            </operations>
+        </match>
+    </Operation>
+
+    <!-- Remove cookomatic -->
+
+    <!-- Check for Bottling and Booze first -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>[1.0] RimCuisine 2 Bottling and Booze Expansion</li>
+            <li>[1.0] RimCuisine 2 Meals and Munchies Expansion</li>
+        </mods>
+
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeVegetableJuiceBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeTonicSodaBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeFruitSodaBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeEggNogBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessEnergyDrinkBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeHotCocoaBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeIcedTeaBulk"]</xpath>
+                </li>
+
+            </operations>
+        </match>
+    </Operation>
+
+    <!-- Remove all bulk recipes and cookomatic-->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>[1.0] RimCuisine 2 Bottling and Booze Expansion</li>
+        </mods>
+
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+
+            <operations>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeFruitPreservesBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_CrispsBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeCupcakeBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeIcecreamBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeChocolateIcecreamBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeCandyBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeJuiceBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakePastryBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessCoffeeBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_BrewTeaBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeHardtackBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessSoybeanBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessAgaveBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessCacaoBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="CookSimpleMealBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_CookFineMealBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_Make_KibbleBulk"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakePemmicanBulk"]</xpath>
+                </li>
+
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/WorkGiverDef[defName="RC2_DoBillsCookomatic"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="RC2_Cookomatic"]</xpath>
+                </li>
+
+            </operations>
+        </match>
+    </Operation>
+</Patch>

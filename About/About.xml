@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>RimCuisine2 Adjusted</name>
+	<author>Bishop</author>
+	<supportedVersions>
+		<li>1.0</li>
+	</supportedVersions>
+	<url>https://github.com/BishopGit/rc2-adjusted</url>
+	<description>Some quality of life changes for RimCuisine 2.</description>
+</ModMetaData>

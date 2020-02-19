@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>[1.0] RimCuisine 2 Core</li>
+        </mods>
+
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+
+            <operations>
+                <!--Change tech level for plants -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ResearchProjectDef[defName="RC2_IntermediateAgriculture"]/techLevel</xpath>
+                    <value>
+                        <techLevel>Neolithic</techLevel>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ResearchProjectDef[defName="RC2_IntermediateForestry"]/techLevel</xpath>
+                    <value>
+                        <techLevel>Neolithic</techLevel>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ResearchProjectDef[defName="RC2_AdvancedAgriculture"]/techLevel</xpath>
+                    <value>
+                        <techLevel>Medieval</techLevel>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ResearchProjectDef[defName="Cocoa"]/techLevel</xpath>
+                    <value>
+                        <techLevel>Medieval</techLevel>
+                    </value>
+                </li>
+
+                <!-- Drinking coffee and tea doesn't cause heart attacks -->
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/HediffDef[defName="RC2_Caffeine"]/stages/li[4]/hediffGivers</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/HediffDef[defName="RC2_CaffeineTolerance"]/hediffGivers</xpath>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThoughtDef[defName="RC2_CaffeineHigh"]/stages/li[4]/description</xpath>
+                    <value>
+                        <description>Palms are sweaty. Knees weak.</description>
+                    </value>
+                </li>
+                
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/HediffDef[defName="RC2_CaffeineTea"]/stages/li[4]/hediffGivers</xpath>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThoughtDef[defName="RC2_CaffeineHighTea"]/stages/li[4]/description</xpath>
+                    <value>
+                        <description>Palms are sweaty. Knees weak.</description>
+                    </value>
+                </li>
+
+
+                <!-- Change research reqs for food -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_MakeCandy"]/researchPrerequisite</xpath>
+                    <value>
+                        <researchPrerequisite>RC2_AdvancedCooking</researchPrerequisite>
+                    </value>
+                </li>
+
+                <!-- Remove Cabbage Trader -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/TraderKindDef[defName="RC2_Caravan_Cabbage"]/commonality</xpath>
+                    <value>
+                        <commonality>0</commonality>
+                    </value>
+                </li>
+
+                <!-- Change 'unfortunate' descriptions -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessSugarBeets"]/description</xpath>
+                    <value>
+                        <description>Process sugar beets into refined sugar. Less efficient than sugarcane.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessSugarBeetsBulk"]/description</xpath>
+                    <value>
+                        <description>Process sugar beets into refined sugar. Makes 5. Less efficient than sugarcane.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessSugarcane"]/description</xpath>
+                    <value>
+                        <description>Process sugarcane into refined sugar. Less efficient than sugarcane.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessSugarcaneBulk"]/description</xpath>
+                    <value>
+                        <description>Process sugarcane into refined sugar. Less efficient than sugarcane. Makes 5.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessCacao"]/description</xpath>
+                    <value>
+                        <description>Combine cacao and a sweetener to make chocolate.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/RecipeDef[defName="RC2_ProcessSoybean"]/description</xpath>
+                    <value>
+                        <description>Process soybeans into tofu.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="RC2_Sugar"]/description</xpath>
+                    <value>
+                        <description>A refined sweetener used in cooking. Made from sugar beets or sugarcane.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="RC2_Tofu"]/description</xpath>
+                    <value>
+                        <description>A soy based protein substitute.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="RC2_Syrup"]/description</xpath>
+                    <value>
+                        <description>A natural sweetener made from the sap of maple trees.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="RC2_Honey"]/description</xpath>
+                    <value>
+                        <description>A natural sweetener made by bees.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="RC2_MealPastry"]/description</xpath>
+                    <value>
+                        <description>A soft, flakey and sweet baked treat.</description>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="RC2_MealCrustyPeanuts"]/description</xpath>
+                    <value>
+                        <description>A bag of delicious, salted legumes.</description>
+                    </value>
+                </li>
+
+
+            </operations>
+
+        </match>
+    </Operation>
+</Patch>
